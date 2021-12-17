@@ -2,6 +2,14 @@ service: s3-file-api
 
 provider:
   name: aws
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - xray:PutTelemetryRecords
+            - xray:PutTraceSegments
+          Resource: "*"
   runtime: nodejs12.x
   stage: dev
   region: us-west-2
