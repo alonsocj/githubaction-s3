@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-        run: serverless plugin install -n serverless-iam-roles-per-function
+        run: npm ci
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
